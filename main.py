@@ -14,6 +14,7 @@ import openai
 import docx
 import pandas as pd
 from datetime import datetime
+from dotenv import load_dotenv, find_dotenv
 from supporting_modul import initialize_dataframes, context, chatbot, output_files
 
 
@@ -21,7 +22,8 @@ from supporting_modul import initialize_dataframes, context, chatbot, output_fil
 #   API Key  #
 ##############
 
-openai.api_key="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"
+load_dotenv()
+openai.api_key=os.getenv("OPENAI_KEY")
 
 ###############################
 #    Paths to the databases   #
